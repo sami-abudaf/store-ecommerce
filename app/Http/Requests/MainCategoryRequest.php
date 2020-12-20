@@ -24,11 +24,9 @@ class MainCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'photo' => 'required_without:id|mimes:jpg,jpeg,png',
-            'category' => 'required|array|min:1',
-            'category.*.name' => 'required',
-            'category.*.abbr' => 'required',
-            //'category.*.active' => 'required',
+            'name' => 'required',
+            'slug' => 'required|unique:categories,slug,'.$this -> id,
+            'photo' => 'required_without:id|mimes:jpg,jpeg,png'
         ];
     }
 }

@@ -6,8 +6,10 @@ use App\Http\Requests\BrandsRequest;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Config;
 use DB;
 use Illuminate\Support\Str;
+
 
 class BrandsController extends Controller
 {
@@ -16,10 +18,11 @@ class BrandsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-       //$brands= Brand::orderBy('id','DESC')->paginate(PAGINATION_COUNT);
-        $brands =  Brand::selection()->paginate(PAGINATION_COUNT);
+       $brands= Brand::orderBy('id','DESC')->paginate(PAGINATION_COUNT);
+       //$brands =  Brand::selection()->paginate(PAGINATION_COUNT);
         return view('admin.brands.index', compact('brands'));
     }
 
@@ -44,43 +47,40 @@ class BrandsController extends Controller
         //return $request;
         // make validation
         try {
-            if (!$request->has('active'))
-                $request->request->add(['active' => 0]);
+            DB::beginTransaction();
+
+            if (!$request->has('is_active'))
+                $request->request->add(['is_active' => 0]);
             else
-                $request->request->add(['active' => 1]);
+                $request->request->add(['is_active' => 1]);
 
             $fileName = "";
             if ($request->has('photo')) {
 
                 $fileName = uploadImage('brands', $request->photo);
             }
+
             $brand = Brand::create($request->except('_token','photo'));
 
             $brand->name= $request->name;
             $brand->photo=$fileName;
             $brand->save();
-            // send massege user
-          //  Notification::send($vendor, new VendorCreated($vendor));
+
+
             notify()->success(' لقد تم  الحفظ  بنجاح . ' );
+            DB::commit();
 
             return redirect()->route('admin.brands');
 
         }
 
         catch (\Exception $ex) {
-            notify()->error('لقد حصل خطاء ما  يرجي المحاولة فيما بعد .');
 
             return $ex;
+            notify()->error('لقد حصل خطاء ما  يرجي المحاولة فيما بعد .');
             return redirect()->route('admin.brands');
         }
 
-
-
-        //insert to  DB
-
-
-
-        //redirrect message
     }
 
     /**
@@ -146,10 +146,10 @@ class BrandsController extends Controller
                         'photo' => $fileName,
                     ]);
             }
-            if (!$request->has('active'))
-                $request->request->add(['active' => 0]);
+            if (!$request->has('is_active'))
+                $request->request->add(['is_active' => 0]);
             else
-                $request->request->add(['active' => 1]);
+                $request->request->add(['is_active' => 1]);
 
             $brand->update($request->except('_token', 'id', 'photo'));
           $brand->name=$request->name;
@@ -187,7 +187,7 @@ class BrandsController extends Controller
             }
 
            $image = Str::after($brand->photo, 'assets/');
-            $image = base_path('assets/' . $image);
+            $image = public_path('assets/' . $image);
             unlink($image); //delete from folder*/
 
             $brand->delete();
@@ -208,9 +208,9 @@ class BrandsController extends Controller
             if (!$brand)
                 return redirect()->route('admin.brands')->with(['error' => 'هذا القسم غير موجود ']);
 
-            $status =  $brand -> active  == 0 ? 1 : 0;
+            $status =  $brand -> is_active  == 0 ? 1 : 0;
 
-            $brand -> update(['active' =>$status ]);
+            $brand -> update(['is_active' =>$status ]);
             notify()->success('تم حالة المنتج بنجاح!');
             return redirect()->route('admin.brands');
 
