@@ -29,4 +29,13 @@ class ProfileRequest extends FormRequest
             'password'  => 'nullable|confirmed|min:8'
         ];
     }
+    public function messages(){
+        return[
+
+            'required' =>'ادخل كلمة المرور الجديدة',
+        ];
+    }
+
+
+
 }

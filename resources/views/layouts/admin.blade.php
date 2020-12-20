@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="rtl">
+<html class="loading" lang="en" data-textdirection="{{ app() -> getLocale() === 'ar' ? 'rtl' : 'ltr'}}">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -161,6 +162,9 @@
 <!-- BEGIN PAGE LEVEL JS-->
 <script src="{{asset('app-assets/js/scripts/forms/form-login-register.js')}}" type="text/javascript"></script>
 <!-- END PAGE LEVEL JS-->
+
+<script src="{{asset('app-assets/admin/js/scripts/forms/checkbox-radio.js')}}" type="text/javascript"></script>
+<script src="{{asset('app-assets/admin/js/scripts/modal/components-modal.js')}}" type="text/javascript"></script>
 <script>
 
     $('#meridians1').timeDropper({
