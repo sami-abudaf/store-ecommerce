@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
+use App\Http\Enumerations\CategoryType;
 use App\Http\Requests\MainCategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -60,6 +60,14 @@ class MainCategoriesController extends Controller
 
                 $fileName = uploadImage('categories', $request->photo);
             }
+            //if user choose main category then we must remove paret id from the request
+
+            if($request -> type == CategoryType::mainCategory) //main category
+            {
+                $request->request->add(['parent_id' => null]);
+            }
+
+            //if he choose child category we mus t add parent id
 
             $category = Category::create($request->except('_token', 'photo'));
 
@@ -132,10 +140,13 @@ class MainCategoriesController extends Controller
             if (!$category)
                 return redirect()->route('admin.maincategories')->with(['error' => 'هذا القسم غير موجود']);
 
+            DB::beginTransaction();
             if (!$request->has('is_active'))
                 $request->request->add(['is_active' => 0]);
             else
                 $request->request->add(['is_active' => 1]);
+
+
 
             if ($request->has('photo') ) {
                 $fileName = uploadImage('categories', $request->photo);
@@ -144,17 +155,22 @@ class MainCategoriesController extends Controller
                         'photo' => $fileName,
                     ]);
             }
-            $category->update($request->all());
+
+            $category->update($request->except('_token', 'id', 'photo'));
 
             //save translations
             $category->name = $request->name;
-            $category->photo=$fileName;
+            //$category->photo=$fileName;
             $category->save();
-
-            return redirect()->route('admin.maincategories')->with(['success' => 'تم ألتحديث بنجاح']);
+            DB::commit();
+            notify()->success(' لقد تم  التعديل   بنجاح . ' );
+            //return redirect()->route('admin.maincategories')->with(['success' => 'تم ألتحديث بنجاح']);
+            return redirect()->route('admin.maincategories');
         } catch (\Exception $ex) {
-
-            return redirect()->route('admin.maincategories')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+            return $ex;
+            notify()->error('لقد حصل خطاء ما  يرجي المحاولة فيما بعد .');
+            return redirect()->route('admin.maincategories');
+           // return redirect()->route('admin.maincategories')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
         }
     }
 

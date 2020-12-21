@@ -101,7 +101,7 @@
                                                         <div class="form-group">
                                                             <label for="projectinput1"> اختر القسم الرئيسي
                                                             </label>
-                                                            <select name="parent_id" class="select2 form-control">
+                                                            <select name="parent_id" class="select-xl form-control">
                                                                 <optgroup label="من فضلك أختر القسم ">
                                                                     @if($categories && $categories -> count() > 0)
                                                                         @foreach($categories as $category)

@@ -11,13 +11,13 @@
 |
 */
 
-/*
+
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
 ], function () {
 
-*/
+
     Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin','prefix' => 'admin'], function () {
         Route::get('/', 'DashboardController@index')->name('admin.dashboard');
         Route::get('logout', 'LoginController@logout')->name('admin.logout');
@@ -44,6 +44,18 @@ Route::group([
             Route::get('changeStatus/{id}','MainCategoriesController@changeStatus') -> name('admin.maincategories.status');
         });
         ################################## end categories    #######################################
+        ################################## sub categories routes ######################################
+        Route::group(['prefix' => 'sub_categories'], function () {
+            Route::get('/', 'SubCategoriesController@index')->name('admin.subcategories');
+            Route::get('create', 'SubCategoriesController@create')->name('admin.subcategories.create');
+            Route::post('store', 'SubCategoriesController@store')->name('admin.subcategories.store');
+            Route::get('edit/{id}', 'SubCategoriesController@edit')->name('admin.subcategories.edit');
+            Route::post('update/{id}', 'SubCategoriesController@update')->name('admin.subcategories.update');
+            Route::get('delete/{id}', 'SubCategoriesController@destroy')->name('admin.subcategories.delete');
+            Route::get('changeStatus/{id}','SubCategoriesController@changeStatus') -> name('admin.subcategories.status');
+        });
+
+        ################################## end sub categories    #######################################
         ################################## brands routes ######################################
         Route::group(['prefix' => 'brands'], function () {
             Route::get('/','BrandsController@index') -> name('admin.brands');
@@ -56,7 +68,16 @@ Route::group([
 
         });
         ################################## end brands    #######################################
-
+        ################################## Tags routes ######################################
+        Route::group(['prefix' => 'tags'], function () {
+            Route::get('/', 'TagsController@index')->name('admin.tags');
+            Route::get('create', 'TagsController@create')->name('admin.tags.create');
+            Route::post('store', 'TagsController@store')->name('admin.tags.store');
+            Route::get('edit/{id}', 'TagsController@edit')->name('admin.tags.edit');
+            Route::post('update/{id}', 'TagsController@update')->name('admin.tags.update');
+            Route::get('delete/{id}', 'TagsController@destroy')->name('admin.tags.delete');
+        });
+        ################################## end tags    #######################################
     });
 
 
@@ -64,9 +85,9 @@ Route::group([
         Route::get('login', 'LoginController@getLogin')->name('get.admin.login');
         Route::post('login', 'LoginController@login')->name('admin.login');
     });
-/*
+
 });
-*/
+
 //factory(App\Models\Category::class,100)->create();
 
 
