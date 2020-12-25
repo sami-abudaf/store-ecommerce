@@ -1,5 +1,5 @@
-@extends('layouts.admin')
 
+@extends('layouts.admin')
 @section('content')
 
     <div class="app-content content">
@@ -11,9 +11,9 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="">الرئيسية </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href=""> الاقسام الفرعية </a>
+                                <li class="breadcrumb-item"><a href=""> الاقسام ألفرعية  </a>
                                 </li>
-                                <li class="breadcrumb-item active"> تعديل - {{$subCategory -> name}}
+                                <li class="breadcrumb-item active"> تعديل - {{$category -> name}}
                                 </li>
                             </ol>
                         </div>
@@ -27,7 +27,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form"> تعديل قسم فرعي  </h4>
+                                    <h4 class="card-title" id="basic-layout-form"> تعديل قسم  فرعي </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -44,17 +44,17 @@
                                 <div class="card-content collapse show">
                                     <div class="card-body">
                                         <form class="form"
-                                              action="{{route('admin.subcategories.update',$subCategory -> id)}}"
+                                              action="{{route('admin.subcategories.update',$category -> id)}}"
                                               method="POST"
                                               enctype="multipart/form-data">
                                             @csrf
 
-                                            <input name="id" value="{{$subCategory -> id}}" type="hidden">
+                                            <input name="id" value="{{$category -> id}}" type="hidden">
 
                                             <div class="form-group">
                                                 <div class="text-center">
                                                     <img
-                                                        src="{{$subCategory -> photo}}"
+                                                        src="{{$category->photo}}"
                                                         class="rounded-circle  height-150" alt="صورة القسم  ">
                                                 </div>
                                             </div>
@@ -73,58 +73,61 @@
 
                                             <div class="form-body">
 
-                                                <h4 class="form-section"><i class="ft-home"></i> بيانات القسم الفرعي </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i> بيانات القسم </h4>
                                                 <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> اسم القسم
-                                                                - {{__('messages.'.$subCategory -> translation_lang)}} </label>
-                                                            <input type="text" id="name"
-                                                                   class="form-control"
-                                                                   placeholder="  "
-                                                                   value="{{$subCategory -> name}}"
-                                                                   name="category[0][name]">
-                                                            @error("category.0.name")
-                                                            <span class="text-danger"> هذا الحقل مطلوب</span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="projectinput2"> أختر القسم الرئيسي </label>
-                                                            <select name="category_id" class="select form-control">
+                                                            <label for="projectinput2"> أختر القسم </label>
+                                                            <select name="parent_id" class="select2 form-control">
                                                                 <optgroup label="من فضلك أختر القسم ">
                                                                     @if($categories && $categories -> count() > 0)
-                                                                        @foreach($categories as $category)
+                                                                        @foreach($categories as $mainCategory)
                                                                             <option
-                                                                                value="{{$category -> id }}"
-                                                                                @if($subCategory-> category_id == $category->id ) selected @endif
-                                                                            >{{$category -> name}}</option>
+                                                                                value="{{$mainCategory -> id }}"   @if($mainCategory -> id == $category -> parent_id)  selected @endif >{{$mainCategory -> name}}</option>
                                                                         @endforeach
                                                                     @endif
                                                                 </optgroup>
                                                             </select>
-                                                            @error("category_id")
+                                                            @error('parent_id')
                                                             <span class="text-danger"> {{$message}}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
+                                                </div>
 
-                                                    <div class="col-md-6 hidden">
+                                                <div class="row">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> أختصار
-                                                                اللغة {{__('messages.'.$subCategory -> translation_lang)}} </label>
-                                                            <input type="text" id="abbr"
+                                                            <label for="projectinput1"> اسم القسم
+                                                            </label>
+                                                            <input type="text" id="name"
                                                                    class="form-control"
                                                                    placeholder="  "
-                                                                   value="{{$subCategory -> translation_lang}}"
-                                                                   name="category[0][abbr]">
-
-                                                            @error("category.0.abbr")
-                                                            <span class="text-danger"> هذا الحقل مطلوب</span>
+                                                                   value="{{$category -> name}}"
+                                                                   name="name">
+                                                            @error("name")
+                                                            <span class="text-danger">{{$message}}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> اسم بالرابط
+                                                            </label>
+                                                            <input type="text" id="name"
+                                                                   class="form-control"
+                                                                   placeholder="  "
+                                                                   value="{{$category -> slug}}"
+                                                                   name="slug">
+                                                            @error("slug")
+                                                            <span class="text-danger">{{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+
+
 
 
                                                 </div>
@@ -132,15 +135,15 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group mt-1">
                                                             <input type="checkbox" value="1"
-                                                                   name="category[0][active]"
+                                                                   name="is_active"
                                                                    id="switcheryColor4"
                                                                    class="switchery" data-color="success"
-                                                                   @if($subCategory -> active == 1)checked @endif/>
+                                                                   @if($category -> is_active == 1)checked @endif/>
                                                             <label for="switcheryColor4"
-                                                                   class="card-title ml-1">الحالة {{__('messages.'.$subCategory -> translation_lang)}} </label>
+                                                                   class="card-title ml-1">الحالة  </label>
 
-                                                            @error("category.0.active")
-                                                            <span class="text-danger"> </span>
+                                                            @error("is_active")
+                                                            <span class="text-danger">{{$message }}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
@@ -159,131 +162,6 @@
                                             </div>
                                         </form>
 
-                                        <ul class="nav nav-tabs">
-                                            @isset($subCategory -> categories)
-                                                @foreach($subCategory -> categories   as $index =>  $translation)
-                                                    <li class="nav-item">
-                                                        <a class="nav-link @if($index ==  0) active @endif  " id="homeLable-tab"  data-toggle="tab"
-                                                           href="#homeLable{{$index}}" aria-controls="homeLable"
-                                                           aria-expanded="{{$index ==  0 ? 'true' : 'false'}}">
-                                                            {{$translation -> translation_lang}}</a>
-                                                    </li>
-                                                @endforeach
-                                            @endisset
-                                        </ul>
-                                        <div class="tab-content px-1 pt-1">
-
-                                            @isset($subCategory -> categories)
-                                                @foreach($subCategory -> categories   as $index =>  $translation)
-
-                                                    <div role="tabpanel" class="tab-pane  @if($index ==  0) active  @endif  " id="homeLable{{$index}}"
-                                                         aria-labelledby="homeLable-tab"
-                                                         aria-expanded="{{$index ==  0 ? 'true' : 'false'}}">
-
-                                                        <form class="form"
-                                                              action="{{route('admin.subcategories.update',$translation -> id)}}"
-                                                              method="POST"
-                                                              enctype="multipart/form-data">
-                                                            @csrf
-
-                                                            <input name="id" value="{{$translation -> id}}" type="hidden">
-
-
-                                                            <div class="form-body">
-
-                                                                <h4 class="form-section"><i class="ft-home"></i> بيانات القسم الفرعي </h4>
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label for="projectinput1"> اسم القسم الفرعي
-                                                                                - {{__('messages.'.$translation -> translation_lang)}} </label>
-                                                                            <input type="text" id="name"
-                                                                                   class="form-control"
-                                                                                   placeholder="  "
-                                                                                   value="{{$translation -> name}}"
-                                                                                   name="category[0][name]">
-                                                                            @error("category.0.name")
-                                                                            <span class="text-danger"> هذا الحقل مطلوب</span>
-                                                                            @enderror
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label for="projectinput2"> أختر القسم الرئيسي </label>
-                                                                            <select name="category_id" class="select form-control" disabled>
-                                                                                <optgroup label="من فضلك أختر القسم ">
-                                                                                    @if($categories && $categories -> count() > 0)
-                                                                                        @foreach($categories as $category)
-                                                                                            <option
-                                                                                                value="{{$category -> id }}"
-                                                                                                @if($subCategory-> category_id == $category->id ) selected @endif
-                                                                                            >{{$category -> name}}</option>
-                                                                                        @endforeach
-                                                                                    @endif
-                                                                                </optgroup>
-                                                                            </select>
-                                                                            @error("category_id")
-                                                                            <span class="text-danger"> {{$message}}</span>
-                                                                            @enderror
-                                                                        </div>
-                                                                    </div>
-
-
-                                                                    <div class="col-md-6 hidden">
-                                                                        <div class="form-group">
-                                                                            <label for="projectinput1"> أختصار
-                                                                                اللغة {{__('messages.'.$translation -> translation_lang)}} </label>
-                                                                            <input type="text" id="abbr"
-                                                                                   class="form-control"
-                                                                                   placeholder="  "
-                                                                                   value="{{$translation -> translation_lang}}"
-                                                                                   name="category[0][abbr]">
-
-                                                                            @error("category.0.abbr")
-                                                                            <span class="text-danger"> هذا الحقل مطلوب</span>
-                                                                            @enderror
-                                                                        </div>
-                                                                    </div>
-
-
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group mt-1">
-                                                                            <input type="checkbox" value="1"
-                                                                                   name="category[0][active]"
-                                                                                   id="switcheryColor4"
-                                                                                   class="switchery" data-color="success"
-                                                                                   @if($translation -> active == 1)checked @endif/>
-                                                                            <label for="switcheryColor4"
-                                                                                   class="card-title ml-1">الحالة {{__('messages.'.$translation -> translation_lang)}} </label>
-
-                                                                            @error("category.0.active")
-                                                                            <span class="text-danger"> </span>
-                                                                            @enderror
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-
-                                                            <div class="form-actions">
-                                                                <button type="button" class="btn btn-warning mr-1"
-                                                                        onclick="history.back();">
-                                                                    <i class="ft-x"></i> تراجع
-                                                                </button>
-                                                                <button type="submit" class="btn btn-primary">
-                                                                    <i class="la la-check-square-o"></i> تحديث
-                                                                </button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-
-                                                @endforeach
-                                            @endisset
-
-                                        </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -295,4 +173,4 @@
         </div>
     </div>
 
-@endsection
+@stop

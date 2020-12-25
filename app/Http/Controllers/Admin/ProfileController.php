@@ -46,6 +46,7 @@ class ProfileController extends Controller
 
         } catch (\Exception $ex) {
             notify()->error('هناك  خطأفي البيانات  الايميل او كلمة المرور .', 'Inconceivable!');
+            return redirect()->back();
             //return redirect()->back()->with(['error' => 'هناك خطا ما يرجي المحاولة فيما بعد']);
 
         }

@@ -64,6 +64,21 @@
     <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/core/menu/menu-types/vertical-menu-modern.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/core/colors/palette-gradient.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/pages/login-register.css')}}">
+    <!-- BEGIN VENDOR CSS-->
+
+<!--uploade image-->
+    <!-- BEGIN VENDOR CSS-->
+
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/vendors/css/ui/prism.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/vendors/css/file-uploaders/dropzone.min.css')}}">
+    <!-- END VENDOR CSS-->
+
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/core/menu/menu-types/vertical-menu-modern.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/core/colors/palette-gradient.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/plugins/file-uploaders/dropzone.css')}}">
+    <!-- END Page Level CSS-->
+
     @notify_css
     @yield('style')
     <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
@@ -165,6 +180,20 @@
 
 <script src="{{asset('app-assets/admin/js/scripts/forms/checkbox-radio.js')}}" type="text/javascript"></script>
 <script src="{{asset('app-assets/admin/js/scripts/modal/components-modal.js')}}" type="text/javascript"></script>
+
+<!--uploade imag--->
+<!-- BEGIN PAGE VENDOR JS-->
+<script src="{{asset('app-assets/vendors/js/extensions/dropzone.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('app-assets/vendors/js/ui/prism.min.js')}}" type="text/javascript"></script>
+<!-- END PAGE VENDOR JS-->
+<!-- BEGIN MODERN JS-->
+<script src="{{asset('app-assets/js/core/app-menu.js')}}" type="text/javascript"></script>
+<script src="{{asset('app-assets/js/core/app.js')}}" type="text/javascript"></script>
+<script src="{{asset('app-assets/js/scripts/customizer.js')}}" type="text/javascript"></script>
+<!-- END MODERN JS-->
+<!-- BEGIN PAGE LEVEL JS-->
+<script src="{{asset('app-assets/js/scripts/extensions/dropzone.js')}}" type="text/javascript"></script>
+<!-- END PAGE LEVEL JS-->
 <script>
 
     $('#meridians1').timeDropper({

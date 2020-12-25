@@ -23,12 +23,14 @@ class SubCategoryRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'photo' => 'required_without:id|mimes:jpg,jpeg,png',
-            'category' => 'required|array|min:1',
-            'category.*.name' => 'required',
-            'category.*.abbr' => 'required',
-            //'category.*.active' => 'required',
-        ];
+
+
+            return [
+                'photo' => 'required_without:id|mimes:jpg,jpeg,png',
+                'parent_id' => 'required|exists:categories,id',
+                'name' => 'required',
+                'slug' => 'required|unique:categories,slug,' . $this->id
+            ];
+
     }
 }

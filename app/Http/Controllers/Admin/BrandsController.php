@@ -152,8 +152,8 @@ class BrandsController extends Controller
                 $request->request->add(['is_active' => 1]);
 
             $brand->update($request->except('_token', 'id', 'photo'));
-          $brand->name=$request->name;
-          $brand->save();
+              $brand->name=$request->name;
+              $brand->save();
 
             DB::commit();
 
