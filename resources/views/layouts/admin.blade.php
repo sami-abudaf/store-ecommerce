@@ -19,7 +19,14 @@
         rel="stylesheet">
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css"
           rel="stylesheet">
-
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/core/menu/menu-types/vertical-menu-modern.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/core/colors/palette-gradient.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/vendors/css/charts/jquery-jvectormap-2.0.3.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/vendors/css/charts/morris.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/fonts/simple-line-icons/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/core/colors/palette-gradient.css')}}">
+    <!-- END Page Level CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('app-assets/admin/css-rtl/plugins/animate/animate.css')}}">
     <!-- BEGIN VENDOR CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/vendors.css')}}">
@@ -88,8 +95,8 @@
         }
     </style>
 </head>
-<body class="vertical-layout vertical-menu 2-columns   @if(Request::is('admin/users/tickets/reply*')) chat-application @endif menu-expanded fixed-navbar"
-      data-open="click" data-menu="vertical-menu" data-col="2-columns">
+<body class="vertical-layout vertical-menu-modern 2-columns   menu-expanded fixed-navbar   @if(Request::is('admin/users/tickets/reply*')) chat-application @endif menu-expanded fixed-navbar"
+      data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
 <!-- fixed-top-->
 @include('admin.includes.header')
 <!-- ////////////////////////////////////////////////////////////////////////////-->
@@ -193,6 +200,25 @@
 <!-- END MODERN JS-->
 <!-- BEGIN PAGE LEVEL JS-->
 <script src="{{asset('app-assets/js/scripts/extensions/dropzone.js')}}" type="text/javascript"></script>
+<!-- END PAGE LEVEL JS-->
+<!--menu-->
+<!-- BEGIN PAGE VENDOR JS-->
+<script src="{{asset('app-assets/vendors/js/charts/chart.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('app-assets/vendors/js/charts/raphael-min.js')}}" type="text/javascript"></script>
+<script src="{{asset('app-assets/vendors/js/charts/morris.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('app-assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js')}}"
+        type="text/javascript"></script>
+<script src="{{asset('app-assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js')}}"
+        type="text/javascript"></script>
+<script src="{{asset('app-assets/data/jvector/visitor-data.js')}}" type="text/javascript"></script>
+<!-- END PAGE VENDOR JS-->
+<!-- BEGIN MODERN JS-->
+<script src="{{asset('app-assets/js/core/app-menu.js')}}" type="text/javascript"></script>
+<script src="{{asset('app-assets/js/core/app.js')}}" type="text/javascript"></script>
+<script src="{{asset('app-assets/js/scripts/customizer.js')}}" type="text/javascript"></script>
+<!-- END MODERN JS-->
+<!-- BEGIN PAGE LEVEL JS-->
+<script src="{{asset('app-assets/js/scripts/pages/dashboard-sales.js')}}" type="text/javascript"></script>
 <!-- END PAGE LEVEL JS-->
 <script>
 
