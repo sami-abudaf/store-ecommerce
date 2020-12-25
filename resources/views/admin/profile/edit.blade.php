@@ -56,7 +56,7 @@
                                                             <label for="projectinput1"> الاسم </label>
                                                             <input type="text" value="{{$admin -> name  }}" id="name"
                                                                    class="form-control"
-                                                                   placeholder=""
+                                                                   placeholder="  "
                                                                    name="name">
                                                             @error("name")
                                                             <span class="text-danger">{{$message}}</span>
@@ -80,13 +80,11 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> رقم الهاتف  </label>
-                                                            <input type="text" value="{{$admin -> mobile}}" id="mobile"
+                                                            <label for="projectinput1"> الهاتف  </label>
+                                                            <input type="tel" value="{{$admin->mobile}}" id=""
                                                                    class="form-control"
                                                                    placeholder="  "
-                                                                   name="phone"
-
-                                                            >
+                                                                   name="mobile">
                                                             @error("mobile")
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror
@@ -97,12 +95,10 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="projectinput1">  كلمة المرور الجديده </label>
-                                                            <input type="password" value="" id="password"
+                                                            <input type="password" value="" id=""
                                                                    class="form-control"
                                                                    placeholder="  "
-                                                                   name="password"
-                                                                   required=""
-                                                                    >
+                                                                   name="password">
                                                             @error("password")
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror
@@ -111,14 +107,11 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="projectinput1"> تاكيد كلمة المرور   </label>
-                                                            <input type="password" value="" id="password_confirmation"
+                                                            <input type="password" value="" id=""
                                                                    class="form-control"
                                                                    placeholder=" "
-                                                                    required
                                                                    name="password_confirmation">
-                                                            @error("password_confirmation")
-                                                            <span class="text-danger">{{$message}}</span>
-                                                            @enderror
+
                                                         </div>
                                                     </div>
 
