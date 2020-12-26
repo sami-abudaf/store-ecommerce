@@ -1,10 +1,7 @@
 <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-
-
-
-            <li class="nav-item  open ">
+            <li class="nav-item  has-sub ">
                 <a href=""><i class="la la-home"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">لغات الموقع </span>
                     <span
@@ -21,7 +18,7 @@
             </li>
 
 
-            <li class="nav-item"><a href=""><i class="la la-group"></i>
+            <li class="nav-item has-sub "><a href=""><i class="la la-group"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">الاقسام الرئيسية  </span>
                     <span
                         class="badge badge badge-danger badge-pill float-right mr-2">{{\App\Models\Category::count()}}</span>
@@ -49,10 +46,10 @@
                     </li>
                 </ul>
             </li>-->
-            <li class="nav-item"><a href=""><i class="la la-male"></i>
+            <li class="nav-item has-sub"><a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">الماركات التجارية   </span>
                     <span
-                        class="badge badge badge-success badge-pill float-right mr-2">{{\App\Models\Brand::count()}}</span>
+                        class="badge badge badge-light badge-pill float-right mr-2">{{\App\Models\Brand::count()}}</span>
                 </a>
                 <ul class="menu-content">
                     <li class="active"><a class="menu-item" href="{{route('admin.brands')}}"
@@ -63,7 +60,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item"><a href=""><i class="la la-male"></i>
+            <li class="nav-item has-sub"><a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">العلامة Tags   </span>
                     <span
                         class="badge badge badge-success badge-pill float-right mr-2">{{\App\Models\Tag::count()}}</span>
@@ -77,10 +74,10 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item"><a href=""><i class="la la-male"></i>
+            <li class="nav-item has-sub"><a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">المنجات    </span>
                     <span
-                        class="badge badge badge-success badge-pill float-right mr-2">{{\App\Models\Product::count()}}</span>
+                        class="badge badge badge-warning badge-pill float-right mr-2">{{\App\Models\Product::count()}}</span>
                 </a>
                 <ul class="menu-content">
                     <li class="active"><a class="menu-item" href="{{route('admin.products')}}"
@@ -92,10 +89,10 @@
                 </ul>
             </li>
 
-            <li class="nav-item"><a href=""><i class="la la-male"></i>
+            <li class="nav-item has-sub"><a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">خصائص المنتج  </span>
                     <span
-                        class="badge badge badge-success badge-pill float-right mr-2">{{\App\Models\Attribute::count()}}</span>
+                        class="badge badge badge-info badge-pill float-right mr-2">{{\App\Models\Attribute::count()}}</span>
                 </a>
                 <ul class="menu-content">
                     <li class="active"><a class="menu-item" href="{{route('admin.attributes')}}"
@@ -106,7 +103,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item"><a href=""><i class="la la-male"></i>
+            <li class="nav-item has-sub"><a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">قيم الخصائص </span>
                     <span
                         class="badge badge badge-success badge-pill float-right mr-2">{{\App\Models\Option::count()}}</span>
@@ -121,21 +118,8 @@
                 </ul>
             </li>
 
-            <li class="nav-item"><a href=""><i class="la la-male"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">{{__('admin/sidebar.settings')}} </span>
-                    <span
-                        class="badge badge badge-success badge-pill float-right mr-2">{{\App\Models\Option::count()}}</span>
-                </a>
-                <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="{{route('admin.options')}}"
-                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
-                    </li>
-                    <li><a class="menu-item" href="{{route('admin.options.create')}}" data-i18n="nav.dash.crypto">أاضافة
-                            جديدة </a>
-                    </li>
-                </ul>
-            </li>
-            <li class=" nav-item"><a href="#"><i class="la la-television"></i>
+
+            <li class=" nav-item has-sub"><a href="#"><i class="la la-television"></i>
                     <span class="menu-title"
                             data-i18n="nav.templates.main"> {{__('admin/sidebar.settings')}}</span></a>
                 <ul class="menu-content">
@@ -152,6 +136,15 @@
                                    data-i18n="nav.templates.vert.compact_menu"> توصيل خارجي </a>
                             </li>
                         </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <li><a class="menu-item" href="#"
+                   data-i18n="nav.templates.vert.main"> {{__('admin/sidebar.main slider')}} </a>
+                <ul class="menu-content">
+                    <li><a class="menu-item" href="{{route('admin.sliders.create')}}"
+                           data-i18n="nav.templates.vert.classic_menu">صور الاسليدر </a>
                     </li>
                 </ul>
             </li>
