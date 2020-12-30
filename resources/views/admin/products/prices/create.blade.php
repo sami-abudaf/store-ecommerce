@@ -49,10 +49,43 @@
                                               enctype="multipart/form-data">
                                             @csrf
 
-                                            <input type="hidden" name="product_id" value="{{$id}}">
+                                            <input type="hidden" name="product_id" value="{{$id,$product->id}}">
+
                                             <div class="form-body">
 
                                                 <h4 class="form-section"><i class="ft-home"></i> البيانات الاساسية للمنتج   </h4>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">كود المنتج
+                                                            </label>
+                                                            <input type="text" id="sku"
+                                                                   class="form-control"
+                                                                   placeholder="  "
+                                                                   value="{{$product->sku}}"
+                                                                   name="sku">
+                                                            @error("sku")
+                                                            <span class="text-danger">{{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> اسم المنتج
+                                                            </label>
+                                                            <input type="text" id="name"
+                                                                   class="form-control"
+                                                                   placeholder="  "
+                                                                   value="{{$product->name}}"
+                                                                   name="name">
+                                                            @error("name")
+                                                            <span class="text-danger">{{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
@@ -86,11 +119,10 @@
                                                 </div>
 
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">نوع السعر
-                                                            </label>
-                                                            <select name="special_price_type" class="select2 form-control" multiple>
+                                                            <p for="projectinput1">نوع السعر</p>
+                                                            <select name="special_price_type" class="select2 form-control">
                                                                 <optgroup label="من فضلك أختر النوع ">
                                                                     <option value="percent">precent</option>
                                                                     <option value="fixed">fixed</option>

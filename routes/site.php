@@ -15,8 +15,29 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('front.home');
+})->name('home');
+
+
+Route::group([
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+], function () {
+
+Route::group(['namespace'=>'Site','middleware' => 'auth:user'],function (){
+
 });
+
+
+    Route::group(['namespace' => 'Site', 'middleware' => 'guest:user'], function () {
+
+    });
+
+});
+
+
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+

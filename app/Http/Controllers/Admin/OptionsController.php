@@ -106,17 +106,17 @@ class OptionsController extends Controller
 
         try {
             //get specific categories and its translations
-            $category = Category::orderBy('id', 'DESC')->find($id);
+            $option = Option::orderBy('id', 'DESC')->find($id);
 
-            if (!$category)
-                return redirect()->route('admin.maincategories')->with(['error' => 'هذا القسم غير موجود ']);
+            if (!$option)
+                return redirect()->route('admin.options')->with(['error' => 'هذا القسم غير موجود ']);
 
-            $category->delete();
+            $option->delete();
 
-            return redirect()->route('admin.maincategories')->with(['success' => 'تم  الحذف بنجاح']);
+            return redirect()->route('admin.options')->with(['success' => 'تم  الحذف بنجاح']);
 
         } catch (\Exception $ex) {
-            return redirect()->route('admin.maincategories')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+            return redirect()->route('admin.options')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
         }
     }
 

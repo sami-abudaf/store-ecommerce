@@ -49,30 +49,44 @@
                                               enctype="multipart/form-data">
                                             @csrf
 
-                                            <input type="hidden" name="product_id" value="{{$id}}">
+                                            <input type="hidden" name="product_id" value="{{$id,$product->id}}">
+
                                             <div class="form-body">
 
                                                 <h4 class="form-section"><i class="ft-home"></i> اداره المستودع   </h4>
                                                 <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> كود  المنتج
-                                                            </label>
+                                                            <p for="projectinput1"> كود  المنتج
+                                                            </p>
                                                             <input type="text" id="sku"
                                                                    class="form-control"
                                                                    placeholder="  "
-                                                                   value="{{old('sku')}}"
+                                                                   value="{{$product->sku}}"
                                                                    name="sku">
                                                             @error("sku")
                                                             <span class="text-danger">{{$message}}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
-
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <p for="projectinput1">اسم المنتج
+                                                        </p>
+                                                        <input type="text" id="name"
+                                                               class="form-control"
+                                                               placeholder="  "
+                                                               value="{{$product->name}}"
+                                                               name="sku">
+                                                        @error("name")
+                                                        <span class="text-danger">{{$message}}</span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                                    <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">تتبع المستودع
-                                                            </label>
+                                                            <p for="projectinput1">تتبع المستودع
+                                                            </p>
                                                             <select name="manage_stock" class="select2 form-control" id="manageStock">
                                                                 <optgroup label="من فضلك أختر النوع ">
                                                                     <option value="1">اتاحة التتبع</option>
@@ -93,8 +107,8 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">حالة المنتج
-                                                            </label>
+                                                            <p for="projectinput1">حالة المنتج
+                                                            </p>
                                                             <select name="in_stock" class="select2 form-control" >
                                                                 <optgroup label="من فضلك أختر  ">
                                                                     <option value="1">متاح</option>

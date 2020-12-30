@@ -1,65 +1,96 @@
-@extends('layouts.app')
+@extends('layouts.site')
+
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('password.update') }}">
-                        @csrf
 
-                        <input type="hidden" name="token" value="{{ $token }}">
+    <div id="wrapper-site">
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+        <nav data-depth="1" class="breadcrumb-bg">
+            <div class="container no-index">
+                <div class="breadcrumb">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
+                    <ol itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href="http://demo.bestprestashoptheme.com/savemart/ar/">
+                                <span itemprop="name">الصفحة الرئيسية</span>
+                            </a>
+                            <meta itemprop="position" content="1">
+                        </li>
+                    </ol>
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <div class="container no-index">
+            <div class="row">
+                <div id="content-wrapper" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+                    <div id="main">
+
+
+                        <div class="page-header">
+                            <h1 class="page-title hidden-xs-up">
+                                هل نسيت كلمة المرور؟
+                            </h1>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                        <section id="content" class="page-content">
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
+                            <form action="http://demo.bestprestashoptheme.com/savemart/ar/استعادة كلمة المرور" class="forgotten-password" method="post">
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Reset Password') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                                <ul class="ps-alert-error">
+                                </ul>
+
+                                <header>
+                                    <p class="send-renew-password-link">الرجاء إدخال عنوان البريد الإلكتروني الذي استخدمته للتسجيل. ستتلقى رابطا مؤقتا لإعادة تعيين كلمة المرور.</p>
+                                </header>
+
+                                <section class="form-fields mb-30">
+                                    <div class="form-group center-email-fields d-flex">
+                                        <label class="col-md-3 form-control-label required text-right">البريد الإلكتروني</label>
+                                        <div class="col-md-5 input-group">
+                                            <input type="email" name="email" id="email" class="form-control" value="" required="">
+                                            <div class="input-group-append">
+                                                <button class="form-control-submit" name="submit" type="submit">
+                                                    إرسال رابط إعادة الضبط
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                            </form>
+
+                        </section>
+
+
+
+                        <footer class="page-footer">
+
+                            <a href="http://demo.bestprestashoptheme.com/savemart/ar/الحساب الشخصي" class="account-link">
+                                <i class="material-icons"></i>
+                                <span>العودة إلى تسجيل الدخول</span>
+                            </a>
+
+                        </footer>
+
+
+                    </div>
+
+
                 </div>
             </div>
         </div>
+
+
+
     </div>
-</div>
-@endsection
+@stop

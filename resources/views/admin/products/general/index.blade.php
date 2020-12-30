@@ -49,6 +49,7 @@
                                             <thead class="">
                                             <tr>
                                                 <th>الاسم </th>
+                                                <th>رقم المنتج </th>
                                                 <th> الاسم بالرابط </th>
                                                 <th>الحالة</th>
                                                 <th>السعر</th>
@@ -61,6 +62,7 @@
                                                 @foreach($products as $product)
                                                     <tr>
                                                         <td>{{$product -> name}}</td>
+                                                        <td>{{$product -> qty}}</td>
                                                         <td>{{$product -> slug}}</td>
                                                         <td>{{$product -> getActive()}}</td>
                                                         <td>{{$product -> price}}</td>
