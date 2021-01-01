@@ -6,7 +6,7 @@
                     <span class="btnov-lines"></span>
                     <span>Shop By Categories</span>
                 </div>
-                <div class="verticalmenu-content has-showmore ">
+                <div class="verticalmenu-content has-showmore show">
 
                     <!-- begin /var/www/demo.bestprestashoptheme.com/public_html/savemart/themes/vinova_savemart/modules/novverticalmenu/views/templates/hook/novverticalmenu.tpl -->
                     <div id="_desktop_verticalmenu" class="nov-verticalmenu block" data-count_showmore="6">
@@ -163,7 +163,7 @@
                         <nav id="nov-megamenu" class="clearfix">
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <div id="megamenu" class="nov-megamenu clearfix">
-                                <ul class="menu level1"><li class="item home-page has-sub" ><span class="opener"></span><a href="?home" title="Home"><i class="zmdi zmdi-home"></i>الرئيسية</a><div class="dropdown-menu" style="width:200px"><ul class=""><li class="item " ><a href="?home=home_1" title="Homepage 1">Homepage 1</a></li>
+                                <ul class="menu level1"><li class="item home-page has-sub" ><span class="opener"></span><a href="{{route('home')}}" title="Home"><i class="zmdi zmdi-home"></i>الرئيسية</a><div class="dropdown-menu" style="width:200px"><ul class=""><li class="item " ><a href="?home=home_1" title="Homepage 1">Homepage 1</a></li>
                                                 <li class="item " ><a href="?home=home_2" title="Homepage 2">Homepage 2</a></li>
                                                 <li class="item " ><a href="?home=home_3" title="Homepage 3">Homepage 3</a></li>
                                                 <li class="item " ><a href="?home=home_4" title="Homepage 4">Homepage 4</a></li>

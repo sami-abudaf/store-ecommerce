@@ -7,14 +7,14 @@
             <div class="container no-index">
                 <div class="breadcrumb">
 
-                    <ol itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                  <!--  <ol itemscope="" itemtype="http://schema.org/BreadcrumbList">
                         <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
                             <a itemprop="item" href="{{route('home')}}">
                                 <span itemprop="name">الصفحة الرئيسية</span>
                             </a>
                             <meta itemprop="position" content="1">
                         </li>
-                    </ol>
+                    </ol>-->
 
                 </div>
             </div>
@@ -27,12 +27,12 @@
                 <div id="content-wrapper" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 
-                    <div id="main">
+                    <div id="main" class="col-md-9 pull-left">
 
 
                         <div class="page-header">
-                            <h1 class="page-title hidden-xs-up">
-                                {{ __('Register') }}
+                            <h1 class="page-title show-xs-up ">
+                                تسجيل الدخول
                             </h1>
                         </div>
 
@@ -79,13 +79,13 @@
 
                                         <div class="form-group row no-gutters">
                                             <label class="col-md-2 form-control-label mb-xs-5 required">
-                                                {{ __('E-Mail Address') }}
+                                                mobile
                                             </label>
                                             <div class="col-md-6">
 
-                                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                                <input id="mobile" type="text" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile">
 
-                                                @error('email')
+                                                @error('mobile')
                                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -205,4 +205,8 @@
 
 
     </div>
+
+
+
+
 @endsection

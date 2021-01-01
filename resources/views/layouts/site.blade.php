@@ -21,8 +21,8 @@
 
 
 
-    <link rel="icon" type="image/vnd.microsoft.icon" href="/savemart/img/favicon.ico?1531456858">
-    <link rel="shortcut icon" type="image/x-icon" href="/savemart/img/favicon.ico?1531456858">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="http://demo.bestprestashoptheme.com/savemart/img/favicon.ico?1531456858">
+    <link rel="shortcut icon" type="image/x-icon" href="http://demo.bestprestashoptheme.com/savemart/img/favicon.ico?1531456858">
 
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700,900" rel="stylesheet">
@@ -31,10 +31,6 @@
 
 
     <link rel="stylesheet" href="http://demo.bestprestashoptheme.com/savemart/themes/vinova_savemart/assets/cache/theme-4527f124.css" type="text/css" media="all">
-
-
-
-
 
 
     <script type="text/javascript">
@@ -48,13 +44,6 @@
     </script>
 
 
-
-
-    <!-- begin modules/novnivoslider/views/templates/hook/header.tpl -->
-
-    <!-- end modules/novnivoslider/views/templates/hook/header.tpl -->
-
-    <!-- begin modules/novblockwishlist/novblockwishlist_top.tpl -->
 
     <script type="text/javascript">
         var baseDir = "/savemart/";
@@ -80,16 +69,10 @@
 
 
     <header id="header" class="header-3 sticky-menu">
-
-
-
         @include('front.includes.header-mobile')
         @include('front.includes.header-top')
         @include('front.includes.header-center')
         @include('front.includes.header-bottom')
-
-
-
     </header>
 
     <div id="header-sticky">
@@ -118,24 +101,12 @@
 
 
     <div id="wrapper-site">
-
-
-
         <div id="content-wrapper" class="full-width">
-
-
-          @yield('content')
-
-
+            @yield('content')
         </div>
-
-
-
     </div>
 
     @include('front.includes.footer')
-
-
     <div class="canvas-overlay"></div>
     <div id="back-top">
   <span>

@@ -6,25 +6,22 @@ use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class RedirectIfAuthenticated
+class VerifyCode
 {
     /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
-     * @param  string|null  $guard
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = null)
+    public function handle($request, Closure $next)
     {
-        if (Auth::guard($guard)->check()) {
+        if (Auth::guard()->check()) { // if he already registered adn have account
+           if(Auth::user()-> email_verified_at == null){
+               return redirect(RouteServiceProvider::VERIFIED);
 
-            if($guard == 'admin')
-            return redirect(RouteServiceProvider::ADMIN);
-            else
-            return redirect(RouteServiceProvider::HOME);
-
+           }
         }
 
         return $next($request);
