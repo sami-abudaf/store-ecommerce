@@ -3,10 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="e4bcaf25-3d7a-4862-860b-2505123115f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-assets/admin/images/backgrounds/bg-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/includes/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/includes/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/AttributeTranslation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/AttributeTranslation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/BrandTranslation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/BrandTranslation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_24_025826_create_options_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_24_025826_create_options_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/includes/header-bottom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/includes/header-bottom.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/includes/header-center.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/includes/header-center.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/includes/header-mobile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/includes/header-mobile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/includes/header-top.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/includes/header-top.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/site.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/site.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +166,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/lang/en" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Site" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -157,13 +175,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\store-ecommerce\resources\lang\en" />
-      <recent name="C:\xampp\htdocs\store-ecommerce\resources\lang" />
-      <recent name="C:\xampp\htdocs\store-ecommerce\resources\views\admin\categorises" />
-      <recent name="C:\xampp\htdocs\store-ecommerce\public" />
-      <recent name="C:\xampp\htdocs\store-ecommerce\routes" />
+      <recent name="C:\xampp\htdocs\store-ecommerce\app\Http\Controllers\Site" />
+      <recent name="C:\xampp\htdocs\store-ecommerce\app\Http\Controllers\Auth" />
+      <recent name="C:\xampp\htdocs\store-ecommerce\resources\views\auth" />
+      <recent name="C:\xampp\htdocs\store-ecommerce\app\Http\Services" />
+      <recent name="C:\xampp\htdocs\store-ecommerce" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\store-ecommerce\app\Http\Controllers\Site" />
+      <recent name="C:\xampp\htdocs\store-ecommerce\app\Models" />
       <recent name="C:\xampp\htdocs\store-ecommerce" />
     </key>
   </component>
@@ -208,7 +228,27 @@
       <workItem from="1608874593896" duration="15079000" />
       <workItem from="1608913562369" duration="3960000" />
       <workItem from="1608929102691" duration="10855000" />
-      <workItem from="1608962989399" duration="5401000" />
+      <workItem from="1608962989399" duration="6295000" />
+      <workItem from="1608993559565" duration="10277000" />
+      <workItem from="1609076863215" duration="6006000" />
+      <workItem from="1609086355777" duration="2314000" />
+      <workItem from="1609113469850" duration="2166000" />
+      <workItem from="1609135448113" duration="1284000" />
+      <workItem from="1609218599054" duration="11017000" />
+      <workItem from="1609247498851" duration="13239000" />
+      <workItem from="1609280464831" duration="4278000" />
+      <workItem from="1609302986713" duration="11814000" />
+      <workItem from="1609319631816" duration="5762000" />
+      <workItem from="1609332310709" duration="25463000" />
+      <workItem from="1609390119891" duration="18000" />
+      <workItem from="1609390376210" duration="17586000" />
+      <workItem from="1609417920777" duration="348000" />
+      <workItem from="1609429743442" duration="8544000" />
+      <workItem from="1609441951890" duration="6517000" />
+      <workItem from="1609483343114" duration="2949000" />
+      <workItem from="1609487027441" duration="1494000" />
+      <workItem from="1609497169123" duration="4122000" />
+      <workItem from="1609508565716" duration="5792000" />
     </task>
     <servers />
   </component>

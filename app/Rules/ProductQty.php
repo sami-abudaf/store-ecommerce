@@ -1,11 +1,11 @@
 <?php
+
 namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
 class ProductQty implements Rule
 {
-
     private $manage_stock;
     /**
      * Create a new rule instance.
@@ -30,7 +30,6 @@ class ProductQty implements Rule
             return false;
         else
             return true;
-
     }
 
     /**

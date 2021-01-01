@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Rules;
 
 use App\Models\AttributeTranslation;
@@ -6,10 +7,8 @@ use Illuminate\Contracts\Validation\Rule;
 
 class UniqueAttributeName implements Rule
 {
-
     private $attributeName;
     private $attributeId;
-
     /**
      * Create a new rule instance.
      *
@@ -24,13 +23,12 @@ class UniqueAttributeName implements Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param string $attribute
-     * @param mixed $value
+     * @param  string  $attribute
+     * @param  mixed  $value
      * @return bool
      */
     public function passes($attribute, $value)
     {
-
         if($this -> attributeId) //edit form
             $attribute = AttributeTranslation::where('name', $value)->where('attribute_id','!=',$this->attributeId) -> first();
         else  //creation form
@@ -40,7 +38,6 @@ class UniqueAttributeName implements Rule
             return false;
         else
             return true;
-
     }
 
     /**

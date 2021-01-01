@@ -22,7 +22,7 @@ class ProductsController extends Controller
 
     public function index()
     {
-        $products = Product::select('id','slug','price', 'created_at','is_active')->paginate(PAGINATION_COUNT);
+        $products = Product::select('id','qty','slug','price', 'created_at','is_active')->paginate(PAGINATION_COUNT);
         return view('admin.products.general.index', compact('products'));
     }
 
@@ -86,8 +86,8 @@ class ProductsController extends Controller
 
 
     public function getPrice($product_id){
-
-        return view('admin.products.prices.create') -> with('id',$product_id) ;
+        $product =  Product::find($product_id);
+        return view('admin.products.prices.create',compact('product')) -> with('id',$product_id) ;
     }
 
     public function saveProductPrice(ProductPriceValidation $request){
@@ -105,8 +105,8 @@ class ProductsController extends Controller
 
 
     public function getStock($product_id){
-
-        return view('admin.products.stock.create') -> with('id',$product_id) ;
+        $product =  Product::find($product_id);
+        return view('admin.products.stock.create',compact('product')) -> with('id',$product_id) ;
     }
 
     public function saveProductStock (ProductStockRequest $request){

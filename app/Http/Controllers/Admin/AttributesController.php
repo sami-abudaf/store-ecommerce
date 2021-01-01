@@ -97,7 +97,9 @@ class AttributesController extends Controller
             $attribute = Attribute::find($id);
 
             if (!$attribute)
-                return redirect()->route('admin.attributes')->with(['error' => 'هذا العنصر غير موجود']);
+                notify()->warning('هذا العنصر غير موجود او ربما يكون محذوفا !');
+            return redirect()->route('admin.attributes');
+                //return redirect()->route('admin.attributes')->with(['error' => 'هذا العنصر غير موجود']);
 
 
             DB::beginTransaction();
@@ -107,12 +109,17 @@ class AttributesController extends Controller
             $attribute->save();
 
             DB::commit();
-            return redirect()->route('admin.attributes')->with(['success' => 'تم ألتحديث بنجاح']);
+
+            notify()->success(' لقد تم  الحفظ  بنجاح . ' );
+            return redirect()->route('admin.attributes');
+           // return redirect()->route('admin.attributes')->with(['success' => 'تم ألتحديث بنجاح']);
 
         } catch (\Exception $ex) {
 
             DB::rollback();
-            return redirect()->route('admin.attributes')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+            notify()->error('لقد حصل خطاء ما  يرجي المحاولة فيما بعد .');
+            return redirect()->route('admin.attributes');
+            //return redirect()->route('admin.attributes')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
         }
     }
 

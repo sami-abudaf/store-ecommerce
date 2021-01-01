@@ -117,6 +117,20 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item has-sub open"><a href="#"><i class="la la-image"></i><span class="menu-title" data-i18n="nav.gallery_pages.main">{{__('admin/sidebar.main slider')}}</span></a>
+                <ul class="menu-content" style="">
+                    <li class="is-shown"><a class="menu-item" href="{{route('admin.sliders.create')}}" data-i18n="nav.gallery_pages.gallery_grid">صور الاسليدر </a>
+                    </li>
+                    <li class="is-shown"><a class="menu-item" href="gallery-grid-with-desc.html" data-i18n="nav.gallery_pages.gallery_grid_with_desc">Gallery Grid with Desc</a>
+                    </li>
+                    <li class="is-shown"><a class="menu-item" href="gallery-masonry.html" data-i18n="nav.gallery_pages.gallery_masonry">Masonry Gallery</a>
+                    </li>
+                    <li class="is-shown"><a class="menu-item" href="gallery-masonry-with-desc.html" data-i18n="nav.gallery_pages.gallery_masonry_with_desc">Masonry Gallery with Desc</a>
+                    </li>
+                    <li class="is-shown"><a class="menu-item" href="gallery-hover-effects.html" data-i18n="nav.gallery_pages.gallery_hover_effects">Hover Effects</a>
+                    </li>
+                </ul>
+            </li>
 
 
             <li class=" nav-item has-sub"><a href="#"><i class="la la-television"></i>
@@ -140,14 +154,7 @@
                 </ul>
             </li>
 
-            <li><a class="menu-item" href="#"
-                   data-i18n="nav.templates.vert.main"> {{__('admin/sidebar.main slider')}} </a>
-                <ul class="menu-content">
-                    <li><a class="menu-item" href="{{route('admin.sliders.create')}}"
-                           data-i18n="nav.templates.vert.classic_menu">صور الاسليدر </a>
-                    </li>
-                </ul>
-            </li>
+
                     <li class="nav-item"><a href=""><i class="la la-male"></i>
                             <span class="menu-title" data-i18n="nav.dash.main">الطلاب  </span>
                             <span
