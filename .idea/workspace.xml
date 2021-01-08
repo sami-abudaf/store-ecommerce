@@ -2,27 +2,84 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4bcaf25-3d7a-4862-860b-2505123115f2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/CategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/ProductController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/WishlistController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/categories/7ArZvQuaHY6vTZ181jQ15HOjIEzQN22cltkVb1MQ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/categories/9TiPDa1RHyV2YwW0yTwUOeEXIkhBVWZyUU8HW5Wy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/categories/Fg93vs7A42PkPsOLbI8Io01cyY4Bj6vpg5U3Jlt4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/categories/HdYRNFmjMULDl482O48KrbHxJg4yfw9xTOmbFoiS.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/categories/IyhrmL4Q9loZHgEnMbLdlalRuqVcoEJNR8FdtWLW.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/categories/J45fzyiDGPMYOCnm0pyx3Adjl0MioXxOoKbMrXHT.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/categories/MTikJ2dU4q69L8lSObxFlezkBTwyw81mtznJXIUm.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/categories/NasC37k0lofYbL0dP3QM7LoubWZuSSKzg0voJoEo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/categories/QO2OeeVvtVY4g3h7qHg734I9Zk654qS8Ng7cehO9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/categories/SHC9rGBz45lRGUAoEdVZPeXTZv0MGv65RO471U4e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/categories/eEG5l2EBCXjNcXAP2EkjViOnLF7dAYIsYpmgYuAY.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/categories/iMdAYLKnFb7qwR06PNeuVuwnqaYMUJ3qtCO2zI8O.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/categories/obEADfUeN6CF8DQ5pht6uf9BACRSgx2q1GW93VKD.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/categories/slZueVpnSW01VTEKjP1jkXNImgOtN1E9VsX2O9kj.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/categories/txU7fVF1zUynGLQyJdWD8GzO4cn7qCEBY6kUCgF5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/0nmBc377NaR13H1typcqfvKgKGpsCZg53GGSVsqw.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/50CYr9LipYxHeHIw0ESjKjtBPyRkAodDF93qp14Y.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/67qrBN5INmDf8pODKEQSdPF1x1vvq2d3dZzX5UIm.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/7dIAcYr3fAGmCOmqi1HuWkYL9E9tsv7ANE99ULoC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/8tmna1xVOYTrroXhMSyJPlyc8pmfpBgHkaDczLCi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/AklJx6MEVrxuZPAh6htNBY1Ng44JtoPADb731dJn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/GJXn4SROH9F0tkO7AVHTPPjNsctX2HQrCsBlL54v.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/HIowzc1pJqRXvjPvfWj6fl0uwUSs3cALpbEMOiHY.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/HVHFxC6Wr1KbYdVvRaLNF4JtlNwe9U0V53k9JA5O.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/MC5iBXv1ulWWLXKUwiT0SMHGQuZHP0BkjX1arCCG.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/N7AqWeeRKvzJvbV6N2LnsjruYkaOcamgeCjbS4th.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/OcOnt81RtE03jcdnvWTTA2NW8BNchvyBgywSgMeM.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/PfjoGWFYZA0DeqL2gbhFj0opcBlxqlGrPCrxL6ZU.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/WuDIbFhtdAsA44Djzq7E4H9TeFkbnZCMYDzuf5QC.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/ZJbcSkJ1y83e0DF3NzL0CkghUkv4dkW78tUqVk6A.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/ZuVyyWKCA3mWqA4ml3g6Iy8109859MRIdHa3AIIn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/aU2gpKIK4pTHAJyEqZ7wuyomAWPrK1o32aZpVNiE.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/bFEXj1gBNWKrhL1Xp7sCAKy4RpxgesenXIqxMrtU.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/crDFhd4jfQ1aKHLFzIfF8lZY3cgk6Ja4SbFIFiyL.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/k8oY1Ru3Hp6GsHW5Xie1VuG0FhhOSjZDJI5ktUBu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/m2OTpsAx7DaHQm5pSTwOR3sWe2FJP008lSbsY5D6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/nnoUKaWdvej7YpK9qrQFw4AtZWZCmD1Ln4gsdeIs.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/o3k8uMvgTw0eo8j4BQXpOLD8sweMNDOWGvtaA5po.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/tYKEVCJuOLlvjvXeVhvZye23OVvuBdsNrFwLxV9h.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/tcLln2i0wzle7hUOMmNZYm1lYIBu1noGGFwhOPpF.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/tmHozToWmn0uLUDxrEbGYOCYf1rm3ssFEDMpqAmt.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/uwJgCqsqKBfYqHZVthhdh8192ZoNBZgeBGvVmRwk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/xgaFWDJ0prXJTesVjsIOBA9iiY4UDcqKAapBOUOa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/products/xiQsC983ltlDv3942GLFJL22Tc7wgWtABsLadwoR.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/sliders/42YzIn5iWLV9JHKDpFxzHWHBpjzhcUn6bvLCxgS9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/sliders/AEEoVnYaGiBnxFauWJIr4EReKq9J2dvgR8gjEjsd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/sliders/DCP6Kk6JUq4EmbKu4E91hPNJlU7rQcCrMjaJ1ZhQ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/sliders/TD0pFPIpyzXjPiruBlNCe4RMuNifzqaN0W53sTYK.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/sliders/cnBv4nE0FkWf8eWCpn8GzHJ8S80c2vLo2vLcOvwv.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/sliders/t5VcV3jF8MhMWePV7hlDZmrG0OLeUzpOeWFTqBhJ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_03_011035_create_wish_list_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/front/includes/alert.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/front/includes/alert2.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/front/includes/not-logged.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/front/includes/product-details-model.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/front/includes/product-model-imag.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/front/includes/sliders.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/front/products-details2.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/front/products.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/front/wishlists.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/front/wishlists2.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/AttributeTranslation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/AttributeTranslation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/BrandTranslation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/BrandTranslation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ProductTranslation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ProductTranslation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_24_025826_create_options_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_24_025826_create_options_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/QXSiT3jdM2bBfGvsDPMXCod9vnkNETMu0S1dVHc1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/categories/KnFAAcnUNIubJiXBfsEoewnxzG4ryTDh4nD3wtmv.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/yoW5ZnYviL3ZhQWXmQkRVL5oZ7oaZ6VZydpuKl4J.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/categories/lP9V5NAeHdhnmUHRDyLhfItdigXKhMLYoSfEVZMC.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/includes/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/includes/footer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/includes/header-bottom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/includes/header-bottom.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/includes/header-center.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/includes/header-center.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/includes/header-mobile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/includes/header-mobile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/includes/header-top.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/includes/header-top.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/products-details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/products-details.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/site.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/site.php" afterDir="false" />
     </list>
@@ -44,6 +101,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -166,8 +231,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Site" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/front" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -175,13 +246,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\store-ecommerce\resources\views\front" />
       <recent name="C:\xampp\htdocs\store-ecommerce\app\Http\Controllers\Site" />
+      <recent name="C:\xampp\htdocs\store-ecommerce\resources\views\front\includes" />
+      <recent name="C:\xampp\htdocs\store-ecommerce\app\Models" />
       <recent name="C:\xampp\htdocs\store-ecommerce\app\Http\Controllers\Auth" />
-      <recent name="C:\xampp\htdocs\store-ecommerce\resources\views\auth" />
-      <recent name="C:\xampp\htdocs\store-ecommerce\app\Http\Services" />
-      <recent name="C:\xampp\htdocs\store-ecommerce" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\store-ecommerce\resources\views\front" />
       <recent name="C:\xampp\htdocs\store-ecommerce\app\Http\Controllers\Site" />
       <recent name="C:\xampp\htdocs\store-ecommerce\app\Models" />
       <recent name="C:\xampp\htdocs\store-ecommerce" />
@@ -248,7 +320,27 @@
       <workItem from="1609483343114" duration="2949000" />
       <workItem from="1609487027441" duration="1494000" />
       <workItem from="1609497169123" duration="4122000" />
-      <workItem from="1609508565716" duration="5792000" />
+      <workItem from="1609508565716" duration="32998000" />
+      <workItem from="1609569321002" duration="10884000" />
+      <workItem from="1609597046602" duration="20664000" />
+      <workItem from="1609631105310" duration="6221000" />
+      <workItem from="1609662211576" duration="1583000" />
+      <workItem from="1609663965899" duration="7214000" />
+      <workItem from="1609687938881" duration="25223000" />
+      <workItem from="1609740348380" duration="44000" />
+      <workItem from="1609741798658" duration="18538000" />
+      <workItem from="1609778562483" duration="29268000" />
+      <workItem from="1609830216810" duration="11036000" />
+      <workItem from="1609853615733" duration="4325000" />
+      <workItem from="1609858082869" duration="2020000" />
+      <workItem from="1609862350362" duration="1382000" />
+      <workItem from="1609867548888" duration="9065000" />
+      <workItem from="1609909962761" duration="6871000" />
+      <workItem from="1609932833023" duration="119000" />
+      <workItem from="1609940935703" duration="19887000" />
+      <workItem from="1609976504972" duration="379000" />
+      <workItem from="1610032576845" duration="23913000" />
+      <workItem from="1610085250374" duration="1272000" />
     </task>
     <servers />
   </component>

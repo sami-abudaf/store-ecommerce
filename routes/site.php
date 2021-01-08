@@ -24,10 +24,21 @@ Route::group([
         return view('front.home');
     })->name('home')->middleware('verifiedUser');*/
 
-    Route::group(['namespace'=>'Site','middleware'=> 'guest'],function (){
+    Route::group(['namespace'=>'Site'/*,'middleware'=> 'guest'*/],function (){
         // guest user
 
        Route::get('/','HomeController@home')->name('home')->middleware('verifiedUser');
+        Route::get('category/{slug}','CategoryController@productBySlug')->name('category');
+
+        Route::get('product/{slug}','ProductController@productByIdSlug')->name('product.details');
+    /**
+     * cart routes
+     */
+    Route::group(['prefix'=> ' card'],function (){
+        Route::get('/','CratController@postAdd')->name('site.card.add');
+
+    });
+
     });
 
 
@@ -43,17 +54,19 @@ Route::group([
         Route::post('verify-user', 'VerificationCodeController@verify')->name('verify-user');
         Route::get('verify', 'VerificationCodeController@getVerifyPage')->name('get.verifiction.from');
 
-
     });
 
 
+    Route::group(['namespace'=>'Site' , 'middleware'=> 'auth'],function (){
 
 
+        Route::post('wishlist','WishlistController@store')->name('wishlist-store');
+
+        Route::delete('wishlist', 'WishlistController@destroy')->name('wishlist.destroy');
+
+        Route::get('wishlist/products', 'WishlistController@index')->name('wishlist.product.index');
 
 
-
-
-
+    });
 
 });
-

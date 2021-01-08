@@ -69,6 +69,7 @@ class Category extends Model
     {
         return $this -> belongsToMany(Product::class,'product_categories');
     }
+
     public function  getPhotoAttribute($val){
         return ($val !== null) ? asset('assets/images/categories/' . $val) : "";
     }
