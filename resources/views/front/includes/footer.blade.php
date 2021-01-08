@@ -1,4 +1,4 @@
-<footer class="footer footer-three">
+<footer class="footer footer-three" style="margin-top: 20px;">
     <div class="inner-footer">
         <div class="container">
             <div class="row">
