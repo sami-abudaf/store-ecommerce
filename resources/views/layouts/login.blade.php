@@ -49,6 +49,7 @@
         <div class="content-header row">
         </div>
         <div class="content-body">
+
             @yield('content')
         </div>
     </div>

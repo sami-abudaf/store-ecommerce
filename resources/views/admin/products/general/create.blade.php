@@ -49,11 +49,26 @@
                                               enctype="multipart/form-data">
                                             @csrf
 
-
-
                                             <div class="form-body">
 
                                                 <h4 class="form-section"><i class="ft-home"></i> البيانات الاساسية للمنتج   </h4>
+                                               <div class="row">
+                                                   <div class="col-md-4">
+                                                       <div class="form-group">
+                                                           <p for="projectinput1"> كود  المنتج
+                                                           </p>
+                                                           <input type="text" id="sku"
+                                                                  class="form-control"
+                                                                  placeholder="  "
+                                                                  value=""
+                                                                  name="sku">
+                                                           @error("sku")
+                                                           <span class="text-danger">{{$message}}</span>
+                                                           @enderror
+                                                       </div>
+                                                   </div>
+                                               </div>
+
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
@@ -85,7 +100,37 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> سعر المنتج  المنتج
+                                                            </label>
+                                                            <input type="number" id="price"
+                                                                   class="form-control"
+                                                                   placeholder="  "
+                                                                   value="{{old('price')}}"
+                                                                   name="price">
+                                                            @error("price")
+                                                            <span class="text-danger">{{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
 
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> الكمية
+                                                            </label>
+                                                            <input type="number"
+                                                                   class="form-control"
+                                                                   placeholder=""
+                                                                   value="{{old('qty')}}"
+                                                                   name="qty">
+                                                            @error("qty")
+                                                            <span class="text-danger">{{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">

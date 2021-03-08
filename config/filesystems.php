@@ -57,31 +57,31 @@ return [
 
         'categories' => [
             'driver' => 'local',
-            'root' => base_path() . '/assets/images/categories/',
+            'root' => public_path('assets/images/categories'),
             'url' => env('APP_URL') . '/public',
             'visibility' => 'public',
         ],
         'brands' => [
             'driver' => 'local',
-            'root' => base_path() . '/assets/images/brands/',
+            'root' => public_path('assets/images/brands'),
             'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
         ],
         'products' => [
             'driver' => 'local',
-            'root' => base_path() . '/assets/images/products/',
+            'root' => public_path('assets/images/products'),
             'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
         ],
         'images' => [
             'driver' => 'local',
-            'root' => base_path() . '/assets/images/images/',
+            'root' => public_path('assets/images/images'),
             'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
         ],
         'sliders' => [
             'driver' => 'local',
-            'root' => base_path() . '/assets/images/sliders/',
+            'root' => public_path('assets/images/sliders'),
             'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
         ],

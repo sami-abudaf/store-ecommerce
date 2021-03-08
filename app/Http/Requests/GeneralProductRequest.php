@@ -24,6 +24,7 @@ class GeneralProductRequest extends FormRequest
     public function rules()
     {
         return [
+            'sku'=>'required',
             'name' => 'required|max:100',
             'slug' => 'required|unique:products,slug',
             'description' => 'required|max:1000',
@@ -31,8 +32,9 @@ class GeneralProductRequest extends FormRequest
             'categories' => 'array|min:1', //[]
             'categories.*' => 'numeric|exists:categories,id',
             'tags' => 'nullable',
-            'brand_id' => 'required|exists:brands,id'
-
+            'brand_id' => 'required|exists:brands,id',
+            'price'=> 'required',
+            'qty'=> 'required'
         ];
     }
 }

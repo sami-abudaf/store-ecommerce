@@ -17,7 +17,7 @@
                                         </div>
                                         <div class="col-5 pl-2">
                                             <h4>BTC</h4>
-                                            <h6 class="text-muted">Bitcoin</h6>
+                                            <h6 class="text-muted">أجمالي المبيعات</h6>
                                         </div>
                                         <div class="col-5 text-right">
                                             <h4>$9,980</h4>
@@ -43,10 +43,10 @@
                                         </div>
                                         <div class="col-5 pl-2">
                                             <h4>ETH</h4>
-                                            <h6 class="text-muted">Ethereum</h6>
+                                            <h6 class="text-muted">عدد المنتجات</h6>
                                         </div>
                                         <div class="col-5 text-right">
-                                            <h4>$944</h4>
+                                            <h4>{{\App\Models\Product::count()}}</h4>
                                             <h6 class="success darken-4">12% <i class="la la-arrow-up"></i></h6>
                                         </div>
                                     </div>
@@ -69,10 +69,10 @@
                                         </div>
                                         <div class="col-5 pl-2">
                                             <h4>XRP</h4>
-                                            <h6 class="text-muted">Balance</h6>
+                                            <h6 class="text-muted">عدد العملاء</h6>
                                         </div>
                                         <div class="col-5 text-right">
-                                            <h4>$1.2</h4>
+                                            <h4>{{\App\Models\User::count()}}</h4>
                                             <h6 class="danger">20% <i class="la la-arrow-down"></i></h6>
                                         </div>
                                     </div>
@@ -223,88 +223,33 @@
                                         <thead>
                                         <tr>
                                             <th>Date</th>
+                                            <th>customer name</th>
+                                            <th>customer phone </th>
                                             <th>Type</th>
-                                            <th>Amount BTC</th>
-                                            <th>BTC Remaining</th>
+                                            <th>payment method</th>
                                             <th>Price</th>
-                                            <th>USD</th>
-                                            <th>Fee (%)</th>
+
                                             <th>Cancel</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td>2018-01-31 06:51:51</td>
-                                            <td class="success">Buy</td>
-                                            <td><i class="cc BTC-alt"></i> 0.58647</td>
-                                            <td><i class="cc BTC-alt"></i> 0.58647</td>
-                                            <td>11900.12</td>
-                                            <td>$ 6979.78</td>
-                                            <td>0.2</td>
-                                            <td>
-                                                <button class="btn btn-sm round btn-outline-danger"> Cancel</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2018-01-31 06:50:50</td>
-                                            <td class="danger">Sell</td>
-                                            <td><i class="cc BTC-alt"></i> 1.38647</td>
-                                            <td><i class="cc BTC-alt"></i> 0.38647</td>
-                                            <td>11905.09</td>
-                                            <td>$ 4600.97</td>
-                                            <td>0.2</td>
-                                            <td>
-                                                <button class="btn btn-sm round btn-outline-danger"> Cancel</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2018-01-31 06:49:51</td>
-                                            <td class="success">Buy</td>
-                                            <td><i class="cc BTC-alt"></i> 0.45879</td>
-                                            <td><i class="cc BTC-alt"></i> 0.45879</td>
-                                            <td>11901.85</td>
-                                            <td>$ 5460.44</td>
-                                            <td>0.2</td>
-                                            <td>
-                                                <button class="btn btn-sm round btn-outline-danger"> Cancel</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2018-01-31 06:51:51</td>
-                                            <td class="success">Buy</td>
-                                            <td><i class="cc BTC-alt"></i> 0.89877</td>
-                                            <td><i class="cc BTC-alt"></i> 0.89877</td>
-                                            <td>11899.25</td>
-                                            <td>$ 10694.6</td>
-                                            <td>0.2</td>
-                                            <td>
-                                                <button class="btn btn-sm round btn-outline-danger"> Cancel</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2018-01-31 06:51:51</td>
-                                            <td class="danger">Sell</td>
-                                            <td><i class="cc BTC-alt"></i> 0.45712</td>
-                                            <td><i class="cc BTC-alt"></i> 0.45712</td>
-                                            <td>11908.58</td>
-                                            <td>$ 5443.65</td>
-                                            <td>0.2</td>
-                                            <td>
-                                                <button class="btn btn-sm round btn-outline-danger"> Cancel</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2018-01-31 06:51:51</td>
-                                            <td class="success">Buy</td>
-                                            <td><i class="cc BTC-alt"></i> 0.58647</td>
-                                            <td><i class="cc BTC-alt"></i> 0.58647</td>
-                                            <td>11900.12</td>
-                                            <td>$ 6979.78</td>
-                                            <td>0.2</td>
-                                            <td>
-                                                <button class="btn btn-sm round btn-outline-danger"> Cancel</button>
-                                            </td>
-                                        </tr>
+                                        @isset($orders)
+                                            @foreach($orders as $order)
+                                                <tr>
+                                                    <td>{{$order->created_at}}</td>
+                                                    <td>{{$order->customer_name}}</td>
+                                                    <td>{{$order->customer_phone}}</td>
+                                                    <td class="success">{{$order->status}}</td>
+                                                <!--  <td>{{$order->payment_method}}</td>-->
+                                                    <td>{{$order->getPaymentMethod()}}</td>
+                                                    <td><i class="cc BTC-alt"></i>{{$order->total}}</td>
+
+                                                    <td>
+                                                        <button class="btn btn-sm round btn-outline-danger"> Cancel</button>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        @endisset
                                         </tbody>
                                     </table>
                                 </div>

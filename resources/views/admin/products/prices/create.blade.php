@@ -94,7 +94,7 @@
                                                             <input type="number" id="price"
                                                                    class="form-control"
                                                                    placeholder="  "
-                                                                   value="{{old('price')}}"
+                                                                   value="{{$product->price}}"
                                                                    name="price">
                                                             @error("price")
                                                             <span class="text-danger">{{$message}}</span>

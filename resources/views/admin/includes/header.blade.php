@@ -6,7 +6,7 @@
             <ul class="nav navbar-nav flex-row">
                 <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
                 <li class="nav-item mr-auto">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{route('admin.dashboard')}}">
                         <img class="brand-logo" alt="modern admin logo" src="{{asset('app-assets/images/logo/logo.png')}}">
                         <h3 class="brand-text">Modern Admin</h3>
                     </a>
@@ -170,8 +170,10 @@
                             <div class="dropdown-divider"></div><a class="dropdown-item" href="{{route('admin.logout')}}"><i class="ft-power"></i> Logout</a>
                         </div>
                     </li>
-                    <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown"
-                                                                       aria-haspopup="true" aria-expanded="false"><span class="selected-language">{{App::getLocale()}}</span></a>
+                    <li class="dropdown dropdown-language nav-item">
+                        <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown"
+                                                                       aria-haspopup="true" aria-expanded="false">
+                            <span class="selected-language">{{App::getLocale()}}</span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-flag">
                             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
 
@@ -186,7 +188,7 @@
                     </li>
                     <li class="dropdown dropdown-notification nav-item">
                         <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-bell"></i>
-                            <span class="badge badge-pill badge-default badge-danger badge-default badge-up badge-glow">5</span>
+                            <span class="notification-counter badge badge-pill badge-default badge-danger badge-default badge-up badge-glow">0</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
                             <li class="dropdown-menu-header">

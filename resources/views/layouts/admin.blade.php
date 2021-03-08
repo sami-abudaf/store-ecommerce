@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="{{ app() -> getLocale() === 'ar' ? 'rtl' : 'ltr'}}">
+<html class="loading" lang="en" data-textdirection="{{ app() -> getLocale() === 'en' ? 'rtl' : 'ltr'}}">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -109,6 +109,8 @@
 @notify_js
 @notify_render
 <!-- BEGIN VENDOR JS-->
+<script src="//js.pusher.com/3.1/pusher.min.js"></script>
+
 <script src="{{asset('app-assets/admin/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
 <!-- BEGIN VENDOR JS-->
 <script src="{{asset('app-assets/admin/vendors/js/tables/datatable/datatables.min.js')}}"
@@ -220,6 +222,30 @@
 <!-- BEGIN PAGE LEVEL JS-->
 <script src="{{asset('app-assets/js/scripts/pages/dashboard-sales.js')}}" type="text/javascript"></script>
 <!-- END PAGE LEVEL JS-->
+
+
+
+<script>
+    var previousCounter = $('.notification-counter').text(); //8
+    var notificationsCount = parseInt(previousCounter);
+    // Enable pusher logging - don't include this in production
+    var pusher = new Pusher('cc99920bdff2ff01b91b', {
+        encrypted: true
+    });
+    //Pusher.logToConsole = true;
+    // Subscribe to the channel we specified in our Laravel Event
+    var channel = pusher.subscribe('order_sami');
+    // Bind a function to a Our Event
+    channel.bind('App\\Events\\NewOrder', function(data) {
+        notificationsCount += 1;
+        $('.notification-counter').text(notificationsCount)
+    });
+</script>
+
+
+
+
+
 <script>
 
     $('#meridians1').timeDropper({

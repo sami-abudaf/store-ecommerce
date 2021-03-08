@@ -22,7 +22,7 @@ class ProductsController extends Controller
 
     public function index()
     {
-        $products = Product::select('id','qty','slug','price', 'created_at','is_active')->paginate(PAGINATION_COUNT);
+        $products = Product::select('id','sku','qty','slug','price', 'created_at','is_active')->paginate(PAGINATION_COUNT);
         return view('admin.products.general.index', compact('products'));
     }
 
@@ -53,9 +53,14 @@ class ProductsController extends Controller
             $request->request->add(['is_active' => 1]);
 
         $product = Product::create([
+            'sku'=>$request->sku,
             'slug' => $request->slug,
             'brand_id' => $request->brand_id,
             'is_active' => $request->is_active,
+            'price' => $request->price,
+            'qty' => $request->qty,
+            'manage_stock'=> 0,
+            'in_stock'=> 1,
 
         ]);
         //save translations
@@ -63,7 +68,7 @@ class ProductsController extends Controller
         $product->description = $request->description;
         $product->short_description = $request->short_description;
 
-        $product->save();
+       // $product->save();
 
         //save product categories
 
@@ -71,8 +76,10 @@ class ProductsController extends Controller
 
         //save product tags
 
+            $product->save();
         DB::commit();
         notify()->success('تمت الاضافة  بنجاح.');
+        return redirect()->route('admin.products');
         //return redirect()->route('admin.products')->with(['success' => 'تم ألاضافة بنجاح']);
         }
         catch (\Exception $exception){
